@@ -3,3 +3,4 @@ Milk x 3
 Eggs x 10
 Chocolate x 2
 Wine x 2
+Cheese x 1
