@@ -1,5 +1,5 @@
 Bread x 2
-Milk x 1
+Milk x 3
 Eggs x 10
 Chocolate x 2
-Wine x 1
+Wine x 2
