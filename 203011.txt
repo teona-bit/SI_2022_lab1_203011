@@ -1,0 +1,119 @@
+4. git clone https://github.com/teona-bit/SI_2022_lab1_203011 // kloniranje na remote repozitoriumot lokalno
+
+5. git add .
+   git commit -m "Add 5 items to the shopping list" // dodavanje 5 produkti vo fajlot shopping_list.txt
+
+6. git add .
+   git commit -m "Add quantities to the items" // dodavanje kolicina na proizvodite
+
+8. C:\Users\User\SI_2022_lab1_203011>git log
+commit 87ce0b77c177ead75f8067241dd9aff0376e9013 (HEAD -> branch2, master, branch1)
+Author: teona-bit <52212878+teona-bit@users.noreply.github.com>
+Date:   Sun Mar 20 20:45:18 2022 +0100
+
+    Add quantities to the items
+
+commit 43d472f83fb3c3bf5eb481c661d7be7661ea78fd
+Author: teona-bit <52212878+teona-bit@users.noreply.github.com>
+Date:   Sun Mar 20 20:43:02 2022 +0100
+
+    Add 5 items to the shopping list
+
+commit 45b6fe6287c8e6d52ad5f0e1f07249c2515a31fc (origin/master, origin/HEAD)
+Author: teona-bit <52212878+teona-bit@users.noreply.github.com>
+Date:   Sun Mar 20 20:31:21 2022 +0100
+
+    Initial commit
+
+9. git push origin master // sinhronizacija
+   git push origin branch1 // so remote repozitoriumot
+   git push origin branch2
+
+10. git checkout branch1 // prefrlanje na grankata branch1
+
+11. git add .
+    git commit -m "Change quantity of item #5" // promena na kolicinata na produktot broj 5
+
+12. git checkout master // prefrlanje na grankata master
+
+13. git add .
+    git commit -m "Change quantity of item #2" // promena na kolicinata na produktot broj 2
+
+14. git push origin master // sinhronizacija
+    git push origin branch1 // so remote repozitoriumot
+    git push origin branch2
+
+15. git checkout branch2 // prefrlanje na grankata branch2
+
+17. C:\Users\User\SI_2022_lab1_203011>git log
+commit 03b40dbce397f6b676472f8c5b86564042f0d22a (HEAD -> branch2)
+Author: teona-bit <52212878+teona-bit@users.noreply.github.com>
+Date:   Sun Mar 20 21:02:50 2022 +0100
+
+    Modify item #4
+
+commit 87ce0b77c177ead75f8067241dd9aff0376e9013 (origin/branch2)
+Author: teona-bit <52212878+teona-bit@users.noreply.github.com>
+Date:   Sun Mar 20 20:45:18 2022 +0100
+
+    Add quantities to the items
+
+commit 43d472f83fb3c3bf5eb481c661d7be7661ea78fd
+Author: teona-bit <52212878+teona-bit@users.noreply.github.com>
+Date:   Sun Mar 20 20:43:02 2022 +0100
+
+    Add 5 items to the shopping list
+
+commit 45b6fe6287c8e6d52ad5f0e1f07249c2515a31fc
+Author: teona-bit <52212878+teona-bit@users.noreply.github.com>
+Date:   Sun Mar 20 20:31:21 2022 +0100
+
+    Initial commit
+
+18. git add .
+    git commit -m "Add item #6" // dodavanje produkt broj 6
+    git rebase -i HEAD~2 // gi zema poslednite dve promeni i so pomosh na squash gi spojuva vo eden commit
+
+19. C:\Users\User\SI_2022_lab1_203011>git log
+commit 25e570f47696602d916093ffe37e9975d6aea1c4 (HEAD -> branch2)
+Author: teona-bit <52212878+teona-bit@users.noreply.github.com>
+Date:   Sun Mar 20 21:02:50 2022 +0100
+
+    Modify item #4 and add item #6
+
+commit 87ce0b77c177ead75f8067241dd9aff0376e9013 (origin/branch2)
+Author: teona-bit <52212878+teona-bit@users.noreply.github.com>
+Date:   Sun Mar 20 20:45:18 2022 +0100
+
+    Add quantities to the items
+
+commit 43d472f83fb3c3bf5eb481c661d7be7661ea78fd
+Author: teona-bit <52212878+teona-bit@users.noreply.github.com>
+Date:   Sun Mar 20 20:43:02 2022 +0100
+
+    Add 5 items to the shopping list
+
+commit 45b6fe6287c8e6d52ad5f0e1f07249c2515a31fc
+Author: teona-bit <52212878+teona-bit@users.noreply.github.com>
+Date:   Sun Mar 20 20:31:21 2022 +0100
+
+    Initial commit
+
+20. git checkout master
+    git merge branch1
+Auto-merging shopping_list.txt.txt
+Merge made by the 'recursive' strategy. // pri spojuvanje na grankata master so branch1 ne nastanuva konflikt 
+                                       //spojuvanjeto e napraveno po rekurzivna strategija
+21. git merge branch2
+Auto-merging shopping_list.txt
+CONFLICT (content): Merge conflict in shopping_list.txt
+Automatic merge failed; fix conflicts and then commit the result. 
+// se pojavuva konflikt pri spojuvanje na grankata master so grankata branch2
+// konfliktot se resava so izmena na fajlot shopping_list.txt, taka sto se prifaka produktot chocolate koj kolicina 2 (se prifaka promenata od grankata master)
+
+22. git add . 
+    git commit -m "Add docs" // dodavanje na dokumentot so evidencija
+
+23. git push origin master
+    git push origin branch1
+    git push origin branch2 // sinhronizacija so remote repozitoriumot
